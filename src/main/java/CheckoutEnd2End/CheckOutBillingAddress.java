@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 
 public class CheckOutBillingAddress extends Utils {
 
+    //Locators
     By _countrySelect = By.id("BillingNewAddress_CountryId");
     By _cityName = By.id("BillingNewAddress_City");
     By _address1 = By.id("BillingNewAddress_Address1");

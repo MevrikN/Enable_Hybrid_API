@@ -6,9 +6,9 @@ import org.testng.Assert;
 
 public class HomePage extends Utils {
 
+    //Locators
     By _registerBtn = By.className("ico-register");
     By _clickOnProductName = By.xpath("//a[contains(text(),\"own computer\")]");
-    By _logoutBtn = By.id("ico-logout");
     By _searchSpace = By.id("small-searchterms");
     By _clickOnSearchBtn = By.xpath("//button[@type=\"submit\"]");
     By _clickOnVoteBtn = By.id("vote-poll-1");
@@ -76,7 +76,6 @@ public class HomePage extends Utils {
 
     //Error message vote
     public void verifyErrorMessageOfPole() {
-
         driverTextToBe(_errorMessageVote, "Only registered users can vote.", 10);
         String actual = driver.findElement(_errorMessageVote).getText();
         String expected = "Only registered users can vote.";
@@ -88,6 +87,5 @@ public class HomePage extends Utils {
         String actual = driver.findElement(_successMessageOfVote).getText().substring(3);
         String expected = "vote(s)...";
         Assert.assertEquals(actual, expected, "Text does not matched");
-
     }
 }

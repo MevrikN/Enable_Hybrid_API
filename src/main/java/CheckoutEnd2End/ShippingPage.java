@@ -5,10 +5,10 @@ import org.openqa.selenium.By;
 
 public class ShippingPage extends Utils {
 
+    //Locators
     By _shippingIdNextDay = By.id("shippingoption_1");
     By _shippingIdSecondDay = By.id("shippingoption_2");
     By _continueBtn = By.xpath("//button[@onclick='ShippingMethod.save()']");
-
 
     //Verify url
     public void verifyUrl() {

@@ -8,18 +8,23 @@ public class LoginPage extends Utils {
 
     LoadProp loadProp = new LoadProp();
 
+    //Locators
+    By _loginEmail =By.id("Email");
+    By _loginPassword = By.id("Password");
+    By _loginBtn = By.xpath("//button[@class='button-1 login-button']");
+
     //Email
     public void enterEmail(){
-        driverSendKeys(By.id("Email"),loadProp.getProperty("email"));
+        driverSendKeys(_loginEmail,loadProp.getProperty("email"));
     }
 
     //Password
     public void enterPassword(){
-        driverSendKeys(By.id("Password"), loadProp.getProperty("password"));
+        driverSendKeys(_loginPassword, loadProp.getProperty("password"));
     }
 
     //Login Btn
     public void clickLoginBtn(){
-        driverClickOnElement(By.xpath("//button[@class='button-1 login-button']"));
+        driverClickOnElement(_loginBtn);
     }
 }

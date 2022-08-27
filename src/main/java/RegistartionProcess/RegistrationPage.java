@@ -6,18 +6,14 @@ import org.openqa.selenium.By;
 
 public class RegistrationPage extends Utils {
 
+    //Locators
     By _radioMaleRegister = By.id("gender-male");
     By _firstNameField = By.xpath("//input[@name='FirstName']");
     By _lastnameField = By.id("LastName");
-    By _birthdate = By.name("DateOfBirthDay");
-    By _birthMonth = By.name("DateOfBirthMonth");
-    By _birthYear = By.name("DateOfBirthYear");
     By _emailAddress = By.id("Email");
     By _passwordField = By.id("Password");
     By _confPassword = By.id("ConfirmPassword");
     By _clickOnRegister = By.id("register-button");
-    LoadProp loadProp = new LoadProp();
-
 
     //Verify the URL
     public void verifyRegistrationPageURL() {
@@ -27,7 +23,6 @@ public class RegistrationPage extends Utils {
     //Radio button
     public void radioBtn() {
         driverClickOnElement(_radioMaleRegister, 5);
-
     }
 
     //First Name

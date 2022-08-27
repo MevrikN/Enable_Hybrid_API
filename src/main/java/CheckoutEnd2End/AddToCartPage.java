@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 
 public class AddToCartPage extends Utils {
 
+    //Locators
     By _getTextBuildOwnComp = By.xpath("//td[@class=\"product\"]//child::a[.=\"Build your own computer\"]");
     By _TandCBox = By.id("termsofservice");
     By _AddToCartBtn = By.xpath("//button[contains(text(),\" Checkout \")]");

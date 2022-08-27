@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 
 public class PaymentSelectionCheckout extends Utils {
 
+    //Locators
     By _creditOption = By.id("paymentmethod_1");
     By _paymentpageContinuBtn = By.xpath("//button[@onclick='PaymentMethod.save()']");
 

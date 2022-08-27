@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.Select;
 
 public class BuildYourOwnComputerPage extends Utils {
 
-
+    //Locators
     By _processor = By.id("product_attribute_1");
     By _ram = By.id("product_attribute_2");
     By _hdd = By.xpath("//label[contains(text(),\"320 GB\")]");

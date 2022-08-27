@@ -5,6 +5,9 @@ import org.openqa.selenium.By;
 
 public class OrderCheckOutCompletedMsg extends Utils {
 
+    //Locators
+    By _continueBtn = By.xpath("//button[@onclick='setLocation(\"/\")']");
+
     //Verify title
     public void verifyTitle() {
         titleOfPage().contains("successfully processed!");
@@ -12,6 +15,6 @@ public class OrderCheckOutCompletedMsg extends Utils {
 
     //Continue Btn
     public void clickContinue() {
-        driverClickOnElement(By.xpath("//button[@onclick='setLocation(\"/\")']"));
+        driverClickOnElement(_continueBtn);
     }
 }

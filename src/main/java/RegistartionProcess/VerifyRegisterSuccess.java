@@ -6,6 +6,7 @@ import org.testng.Assert;
 
 public class VerifyRegisterSuccess extends Utils {
 
+    //Locators
     By _getResult = By.className("result");
     By _clickContinueBtn = By.xpath("//a[contains(text(),\"Continue\")]");
 
@@ -14,7 +15,6 @@ public class VerifyRegisterSuccess extends Utils {
         String actual = gettext(_getResult);
         String expected = "Your registration completed";
         Assert.assertEquals(actual, expected, "Registration is not success full");
-
     }
 
     //Continue Btn

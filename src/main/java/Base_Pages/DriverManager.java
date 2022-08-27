@@ -9,6 +9,7 @@ import java.time.Duration;
 public class DriverManager extends Utils{
 
 
+    //Please type in your choice of your browser name
     String browserName = "chrome";
 
     public void openBrowser(){
@@ -34,7 +35,7 @@ public class DriverManager extends Utils{
                 driver = new EdgeDriver();
 
             }else {
-                System.out.println("You Entered un-valid Browser name :" + browserName);
+                System.out.println("You Entered un-valid Browser name :" + browserName+ "Please enter ether of chrome ,firefox or Edge");
             }
 
          //Duration to be wait
@@ -45,12 +46,10 @@ public class DriverManager extends Utils{
 
         //Open Web page
         driver.get("https://demo.nopcommerce.com/");
-
     }
 
     public void closeBrowser(){
         driver.quit();
-
     }
 
 

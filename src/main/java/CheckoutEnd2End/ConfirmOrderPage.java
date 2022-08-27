@@ -5,7 +5,7 @@ import org.openqa.selenium.By;
 
 public class ConfirmOrderPage extends Utils {
 
-
+    //Locators
     By _emailID = By.xpath("//div[@class='billing-info']//li[@class='email']");
     By _continueBtn = By.xpath("//button[contains(text(),'Confirm')]");
 

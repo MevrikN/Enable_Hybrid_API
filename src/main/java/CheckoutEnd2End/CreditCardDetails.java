@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 
 public class CreditCardDetails extends Utils {
 
+    //Locators
     By _cardType = By.id("CreditCardType");
     By _cardHolderName = By.id("CardholderName");
     By _cardNumb = By.id("CardNumber");

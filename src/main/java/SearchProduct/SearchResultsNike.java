@@ -10,6 +10,7 @@ import java.util.List;
 
 public class SearchResultsNike extends Utils {
 
+    //Locators
     By _itemnames = By.xpath("//div[contains(@class,'product-grid')]//div[@class='item-box']//h2");
 
     //Verify Url
@@ -23,7 +24,6 @@ public class SearchResultsNike extends Utils {
         ArrayList<String> products = new ArrayList<>();
         ArrayList<String> numberOfProduct = new ArrayList<>();
 
-        //List of web elements to get test titles
         /**
          To add products name, first locators of all web elements are stored into product locators list.
          And then by using for loop ,it will get all web elements title in string format and store them in products arraylist
