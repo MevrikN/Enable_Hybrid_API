@@ -126,21 +126,21 @@ public class API {
 
         ArrayList<Object> ids = new ArrayList<>();
 
-        for (int a = 0 ; a <= limit-1 ; a++){
-            ids.add(response.jsonPath().getJsonObject("data.results["+a+"].id"));
+        for (int index = 0 ; index <= limit-1 ; index++){
+            ids.add(response.jsonPath().getJsonObject("data.results["+index+"].id"));
 
-            String actID = response.jsonPath().getString("data.results["+a+"].id");
+            String actID = response.jsonPath().getString("data.results["+index+"].id");
             System.out.println("-----------------------");
             System.out.println("Character ID: " + actID);
-            String nameOfCharacter = response.jsonPath().getString("data.results["+a+"].name");
+            String nameOfCharacter = response.jsonPath().getString("data.results["+index+"].name");
             System.out.println("Name: " + nameOfCharacter);
 
             String expID = actID ;
 
-            int expectedCount = response.jsonPath().getInt("data.results["+a+"].comics.available");
+            int expectedCount = response.jsonPath().getInt("data.results["+index+"].comics.available");
             System.out.println("Comics available: "+expectedCount);
 
-            List<Detail> details = response.jsonPath().getList("data.results[" + a + "].urls", Detail.class);
+            List<Detail> details = response.jsonPath().getList("data.results[" + index + "].urls", Detail.class);
             List <String> urls = new ArrayList<>();
 
             for (Detail d : details){
