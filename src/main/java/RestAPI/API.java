@@ -120,43 +120,43 @@ public class API {
 
     //Get list of characters id and urls to count comics
     @Test
-    public void get_list() {
-
-
+    public void get_list_of_urls(){
         Response response = getResponse().extract().response();
+        Assert.assertEquals(response.getStatusCode(),200,"Status Code is not 200");
 
-        ArrayList<Response> ids = new ArrayList<Response>();
+        ArrayList<Object> ids = new ArrayList<>();
 
-        List<String> urls = null;
-        for (int a = 0; a <= limit; a++) {
-            ids.add(response.jsonPath().<Response>getJsonObject("data.results[" + a + "].id"));
+        for (int a = 0 ; a <= limit-1 ; a++){
+            ids.add(response.jsonPath().getJsonObject("data.results["+a+"].id"));
 
-            String actID = response.jsonPath().getString("data.results[" + a + "].id");
-            System.out.println("Charactor ID = " + actID);
-            String expId = actID;
+            String actID = response.jsonPath().getString("data.results["+a+"].id");
+            System.out.println("-----------------------");
+            System.out.println("Character ID: " + actID);
+            String nameOfCharacter = response.jsonPath().getString("data.results["+a+"].name");
+            System.out.println("Name: " + nameOfCharacter);
 
-            int expectedCount = response.jsonPath().getInt("data.results[" + a + "].comics.available");
-            System.out.println("Count : " + expectedCount);
-            // System.out.println(response.jsonPath().getList("data.results[" + a + "].urls", Detail.class));
+            String expID = actID ;
 
+            int expectedCount = response.jsonPath().getInt("data.results["+a+"].comics.available");
+            System.out.println("Comics available: "+expectedCount);
 
             List<Detail> details = response.jsonPath().getList("data.results[" + a + "].urls", Detail.class);
-            urls = new ArrayList<>();
+            List <String> urls = new ArrayList<>();
 
-            for (Detail b : details) {
-                if (b.getUrl().contains(expId)) {
-                    urls.add(b.getUrl());
+            for (Detail d : details){
+                if (d.getUrl().contains(expID)){
+                    urls.add(d.getUrl());
                 }
             }
 
-            for (String url : urls) {
-                System.out.println("URL :: " + url);
+            for (String url : urls){
+                System.out.println("Url :: " + url);
             }
 
+            System.out.println("Url Available " +urls.size());
         }
-        System.out.println("Size of url :" + urls.size());
+        System.out.println("Size of Ids = "+ids.size());
 
-        System.out.println("Size of Ids:  " + ids.size());
     }
 
     }
